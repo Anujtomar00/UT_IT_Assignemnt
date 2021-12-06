@@ -14,22 +14,22 @@ class EmailValidatorTest extends AnyFlatSpec{
   val emailValidator = new EmailValidator()
 
   "Email" should "be valid" in {
-    val result : Boolean = emailValidator.emailIdIsValid("gargtanishka04@gmail.com")
+    val result : Boolean = emailValidator.emailIdIsValid("anujtomar9868@gmail.com")
     assert(result==true)
   }
 
   "Email" should "be invalid because @ does not exist " in {
-    val result : Boolean = emailValidator.emailIdIsValid("gargtanishka04gmail.com")
+    val result : Boolean = emailValidator.emailIdIsValid("anujtomar9868gmail.com")
     assert(result==false)
   }
 
   "Email" should "be invalid because it cannot contain space/tabs" in {
-    val result : Boolean = emailValidator.emailIdIsValid("gargtanishka  @gmail.com")
+    val result : Boolean = emailValidator.emailIdIsValid("anujtomar  @gmail.com")
     assert(result==false)
   }
 
   "Email" should "be invalid because of invalid top domain" in {
-    val result : Boolean = emailValidator.emailIdIsValid("gargtanishka@gmail.xyzy")
+    val result : Boolean = emailValidator.emailIdIsValid("anujtomar@gmail.xyzy")
     assert(result==false)
   }
 
